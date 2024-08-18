@@ -10,7 +10,7 @@
       <td><%= student.name %></td>
       <td><%= student.subject %></td>
       <td><%= student.marks %></td>
-      <td></td>
+      <td><%= link_to "Delete", student, data: { "turbo-method": :delete, turbo_confirm: 'Are you sure you want to delete this student?' } %></td>
     </tr>
   <% end %>
 </table>
