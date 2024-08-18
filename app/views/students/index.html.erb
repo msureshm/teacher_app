@@ -1,0 +1,16 @@
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Subject</th>
+    <th>Marks</th>
+    <th>Action</th>
+  </tr>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.name %></td>
+      <td><%= student.subject %></td>
+      <td><%= student.marks %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
