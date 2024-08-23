@@ -10,8 +10,9 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.find_or_initialize_by(name: student_params[:name], subject: student_params[:subject])
+    @student.marks = student_params[:marks]
     if @student.persisted?
-      @student.update(marks: student_params[:marks])
+      @student.save
       flash[:notice] = "Student Marks updated"
       redirect_to edit_student_path(@student)
     else
@@ -33,7 +34,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     if @student.update(student_params)
       flash[:notice] = "Student was successfully updated"
-      redirect_to students_path
+      redirect_to edit_student_path(@student)
     else
       flash[:alert] = "Student could not be updated"
       render :edit
