@@ -4,6 +4,27 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def new
+    @student = Student.new
+  end
+
+  def create
+    @student = Student.find_or_initialize_by(name: student_params[:name], subject: student_params[:subject])
+    if @student.persisted?
+      @student.update(marks: student_params[:marks])
+      flash[:notice] = "Student Marks updated"
+      redirect_to edit_student_path(@student)
+    else
+      if @student.save
+        flash[:notice] = "Student created"
+        redirect_to edit_student_path(@student)
+      else
+        flash[:alert] = "Student was not created"
+        render :new
+      end
+    end
+  end
+
   def edit
     @student = Student.find(params[:id])
   end
