@@ -1,0 +1,10 @@
+# .rubocop.yml
+AllCops:
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'spec/**/*'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'lib/external_library.rb'
+    - 'Rakefile'
