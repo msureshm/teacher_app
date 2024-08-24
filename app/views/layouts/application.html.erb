@@ -11,27 +11,29 @@
   </head>
 
   <body>
-    <% if current_teacher %>
-      <header>
-        <div class="logo">
-            <h1>tailwebs.</h1>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li>
-                <%= link_to "Logout", session_path(current_teacher), data: { turbo_method: :delete } %>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    <% end %>
+    <div class="container">
+      <% if current_teacher %>
+        <header>
+          <div class="logo">
+              <h1>tailwebs.</h1>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li>
+                  <%= link_to "Logout", session_path(current_teacher), data: { turbo_method: :delete } %>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      <% end %>
 
-    <% flash.each do |type, message| %>
-      <div class="flash flash-<%= type %>">
-        <%= message %>
-      </div>
-    <% end %>
-    <%= yield %>
+      <% flash.each do |type, message| %>
+        <div class="flash flash-<%= type %>">
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

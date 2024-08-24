@@ -1,21 +1,19 @@
-<div class="container">
-    <div class="login-box">
-        <div class="logo">
-            <h1>tailwebs.</h1>
-        </div>
-        <%= form_with url: sessions_path, local: true do |form| %>
-            <div class="input-group">
-                <%= form.label :email %>
-                <%= form.email_field :email, required: true %>
-            </div>
-            <div class="input-group">
-                <%= form.label :password %>
-                <%= form.password_field :password, required: true %>
-            </div>
-            <div class="forgot-password">
-                <a href="#">Forgot Password?</a>
-            </div>
-            <%= form.submit "Login" %>
-        <% end %>
+<div class="login-box">
+    <div class="logo">
+        <h1>tailwebs.</h1>
     </div>
+    <%= form_with url: sessions_path, local: true do |form| %>
+        <div class="input-group">
+            <%= form.label :email %>
+            <%= form.email_field :email, required: true %>
+        </div>
+        <div class="input-group">
+            <%= form.label :password %>
+            <%= form.password_field :password, required: true %>
+        </div>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+        <%= form.submit "Login" %>
+    <% end %>
 </div>
