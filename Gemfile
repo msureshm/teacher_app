@@ -71,3 +71,5 @@ end
 gem 'pry', '~> 0.14.2'
 
 gem 'rubocop', '~> 1.65'
+
+gem "bcrypt", "~> 3.1"

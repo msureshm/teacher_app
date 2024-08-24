@@ -10,6 +10,18 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+teachers = %w[
+  Ms. Emily Thompson
+  Mr. David Martinez
+  Mrs. Laura Johnson
+  Dr. Michael Lee
+  Ms. Sarah Patel
+]
+
+teachers.each do |name|
+  Teacher.create!(name: name, password: )
+end
+
 students = ['Alex Johnson', 'Jamie Lee', 'Taylor Smith', 'Jordan Brown', 'Casey Davis']
 subjects = %w[
   Mathematics

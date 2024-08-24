@@ -11,11 +11,19 @@
   </head>
 
   <body>
-  <% flash.each do |type, message| %>
-    <div class="flash flash-<%= type %>">
-      <%= message %>
-    </div>
-  <% end %>
-  <%= yield %>
+    <% if current_teacher %>
+      <p>
+        Logged in as: <i><%= current_teacher.email %></i>
+        <%= link_to "Logout", session_path(current_teacher), data: { turbo_method: :delete } %>
+      </p>
+    <% else %>
+
+    <% end %>
+    <% flash.each do |type, message| %>
+      <div class="flash flash-<%= type %>">
+        <%= message %>
+      </div>
+    <% end %>
+    <%= yield %>
   </body>
 </html>
