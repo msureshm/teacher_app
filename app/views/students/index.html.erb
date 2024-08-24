@@ -77,6 +77,31 @@
     </table>
 
     <div class="add-button">
-        <button>Add</button>
+        <button id="openModal">Add</button>
     </div>
 </div>
+
+
+
+<div class="container">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2>Add Details</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="Shiv Yadav" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" value="Physics" required>
+
+                <label for="mark">Mark</label>
+                <input type="number" id="mark" name="mark" value="77" required>
+
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
