@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <% @students.each do |student| %>
-      <tr>
+      <tr id="student-<%= student.id %>">
         <td><span class="avatar">S</span> <%= student.name %></td>
         <td><%= student.subject %></td>
         <td><%= student.marks %></td>
@@ -24,6 +24,20 @@
             </div>
           </div>
         </td>
+      </tr>
+
+      <tr id="student-edit-<%= student.id %>" class="hidden">
+        <%= form_for student do |form| %>
+          <td><%= form.text_field :name %></td>
+          <td><%= form.text_field :subject %></td>
+          <td><%= form.text_field :marks %></td>
+          <td>
+            <div class="menu-container">
+              <%= form.submit %>
+              <button class="cancel-button">Cancel</button>
+            </div>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

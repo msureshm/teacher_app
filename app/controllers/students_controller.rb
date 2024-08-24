@@ -32,10 +32,10 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     if @student.update(student_params)
       flash[:notice] = 'Student was successfully updated'
-      redirect_to edit_student_path(@student)
+      redirect_to students_path
     else
       flash[:alert] = 'Student could not be updated'
-      render :edit
+      redirect_to students_path
     end
   end
 
