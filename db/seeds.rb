@@ -11,15 +11,13 @@
 #   end
 
 teachers = %w[
-  Ms. Emily Thompson
-  Mr. David Martinez
-  Mrs. Laura Johnson
-  Dr. Michael Lee
-  Ms. Sarah Patel
+  first@example.com
+  second@example.com
+  third@example.com
 ]
 
-teachers.each do |name|
-  Teacher.create!(name: name, password: )
+teachers.each do |email|
+  Teacher.create(email: email, password: "password")
 end
 
 students = ['Alex Johnson', 'Jamie Lee', 'Taylor Smith', 'Jordan Brown', 'Casey Davis']

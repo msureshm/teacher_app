@@ -3,6 +3,7 @@
 # Controller to manage students
 class StudentsController < ApplicationController
   def index
+    @student = Student.new
     @students = Student.all
   end
 
