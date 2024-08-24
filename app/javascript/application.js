@@ -15,11 +15,20 @@ window.onclick = function(event) {
 document.addEventListener('DOMContentLoaded', () => {
   // Function to toggle the dropdown menu
   function toggleDropdown(event) {
+      // Close any currently open dropdowns
+      const openDropdowns = document.querySelectorAll('.dropdown.show');
+      openDropdowns.forEach(dropdown => {
+          if (dropdown !== event.currentTarget.parentElement) {
+              dropdown.classList.remove('show');
+          }
+      });
+
+      // Toggle the clicked dropdown
       const dropdown = event.currentTarget.parentElement;
       dropdown.classList.toggle('show');
   }
 
-  // Function to close all dropdowns except the one that was clicked
+  // Function to close dropdowns if clicking outside of them
   function closeAllDropdowns(event) {
       const dropdowns = document.querySelectorAll('.dropdown');
       dropdowns.forEach(dropdown => {

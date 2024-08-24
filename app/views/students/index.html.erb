@@ -31,13 +31,13 @@
 
       <tr id="student-edit-<%= student.id %>" class="hidden">
         <%= form_for student do |form| %>
-          <td><%= form.text_field :name %></td>
-          <td><%= form.text_field :subject %></td>
-          <td><%= form.text_field :marks %></td>
+          <td><%= form.text_field :name, id: "name-#{student.id}" %></td>
+          <td><%= form.text_field :subject, id: "subject-#{student.id}" %></td>
+          <td><%= form.text_field :marks, id: "mark-#{student.id}" %></td>
           <td>
             <div class="menu-container">
-              <%= form.submit %>
-              <a href="#" onclick="event.preventDefault(); showEdit('<%= student.id %>')">Cancel</a>
+              <%= form.submit "Update", class: "action-btn" %>
+              <a href="#" onclick="event.preventDefault(); showEdit('<%= student.id %>')" class="action-link">Cancel</a>
             </div>
           </td>
         <% end %>
@@ -52,7 +52,6 @@
 
 <div id="myModal" class="modal">
     <div class="modal-content">
-        <h2>Add Details</h2>
         <%= form_for @student do |form| %>
             <label for="name">Name</label>
             <%= form.text_field :name %>
