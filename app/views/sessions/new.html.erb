@@ -1,14 +1,22 @@
-<h1>Login</h1>
-<%= form_with url: sessions_path, local: true do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
-  <div>
-    <%= form.submit "Login" %>
-  </div>
-<% end %>
+<div class="container">
+    <div class="login-box">
+        <div class="logo">
+            <h1>tailwebs.</h1>
+        </div>
+        <form>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Shipradev_03" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="********" required>
+                <span class="toggle-password">&#128065;</span>
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
