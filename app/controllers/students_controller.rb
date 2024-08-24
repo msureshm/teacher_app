@@ -16,13 +16,10 @@ class StudentsController < ApplicationController
     if @student.persisted?
       @student.save
       flash[:notice] = 'Student Marks updated'
-      redirect_to edit_student_path(@student)
-    elsif @student.save
-      flash[:notice] = 'Student created'
-      redirect_to edit_student_path(@student)
-    else
-      flash[:alert] = 'Student was not created'
-      render :new
+      redirect_to students_path
+    else 
+      flash[:notice] = @student.save ? 'Student created' : 'Student could not be created'
+      redirect_to students_path
     end
   end
 
