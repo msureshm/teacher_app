@@ -3,20 +3,19 @@
         <div class="logo">
             <h1>tailwebs.</h1>
         </div>
-        <form>
+        <%= form_with url: sessions_path, local: true do |form| %>
             <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Shipradev_03" required>
+                <%= form.label :email %>
+                <%= form.email_field :email, required: true %>
             </div>
             <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="********" required>
-                <span class="toggle-password">&#128065;</span>
+                <%= form.label :password %>
+                <%= form.password_field :password, required: true %>
             </div>
             <div class="forgot-password">
                 <a href="#">Forgot Password?</a>
             </div>
-            <button type="submit">Login</button>
-        </form>
+            <%= form.submit "Login" %>
+        <% end %>
     </div>
 </div>
