@@ -12,3 +12,18 @@ window.onclick = function(event) {
   }
 };
 
+// Get the dropdown button and content
+const dropdownButton = document.querySelector('.dropdown-button');
+const dropdown = document.querySelector('.dropdown');
+
+// Toggle the dropdown menu
+dropdownButton.addEventListener('click', () => {
+    dropdown.classList.toggle('show');
+});
+
+// Close the dropdown menu if the user clicks outside of it
+window.addEventListener('click', (event) => {
+    if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+    }
+});
